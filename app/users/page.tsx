@@ -1,22 +1,14 @@
-import { link } from 'fs';
-import React from 'react'
-
-type User = {
-  id: number;
-  name: string;
-}
+import { link } from "fs";
+import React from "react";
+import UserTable from "./UserTable";
 
 const UsersPage = async () => {
-  const res = await fetch('https://jsonplaceholder.typicode.com/users');
-  const users: User[] = await res.json();
   return (
     <>
       <h1>Users</h1>
-      <ul>
-        {users.map(user => <li key={user.id}>{user.name}</li>)}
-      </ul>
-      </>
-  )
-}
+      <UserTable/>
+    </>
+  );
+};
 
-export default UsersPage
+export default UsersPage;
